@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      APP_HOST: barn-hub-agentes_app_1
+      APP_PORT: 3000
+      # O hub tem login próprio, e o /mcp e o OAuth precisam ser alcançados por
+      # IAs de fora: sem a tela de login do Umbrel na frente.
+      PROXY_AUTH_ADD: "false"
+
+  app:
+    image: ghcr.io/barnswallowbr/hub-agentes:1.0.0
+    restart: on-failure
+    stop_grace_period: 10s
+    # PAINEL_SENHA_HASH e SESSAO_SEGREDO ficam só no Umbrel, fora do Git.
+    env_file:
+      - path: ${APP_DATA_DIR}/segredos.env
+        required: false
+    environment:
+      NODE_ENV: production
+      REPO_DIR: /repo
+      DATA_DIR: /data
+      URL_PUBLICA: https://agentes.barnswallow.com.br
+      GIT_AUTOR: Hub de Agentes <ia@barnswallow.com.br>
+      GIT_SSH_COMMAND: ssh -i /data/github/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -o UserKnownHostsFile=/data/known_hosts
+    volumes:
+      - ${APP_DATA_DIR}/repo:/repo
+      - ${APP_DATA_DIR}/data:/data

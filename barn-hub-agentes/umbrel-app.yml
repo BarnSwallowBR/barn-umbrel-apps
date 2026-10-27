@@ -1,0 +1,27 @@
+manifestVersion: 1
+id: barn-hub-agentes
+category: developer
+name: Hub de Agentes
+version: "1.0.0"
+tagline: Agentes, skills e documentos da Barn Swallow para qualquer IA
+icon: https://raw.githubusercontent.com/BarnSwallowBR/barn-umbrel-apps/main/barn-hub-agentes/icon.svg
+description: >-
+  Painel web e endpoint MCP que entrega os agentes, skills e documentos da
+  Barn Swallow ao Claude Code, Codex, OpenCode e claude.ai.
+
+
+  Antes do primeiro uso, crie o arquivo segredos.env na pasta de dados do app
+  com PAINEL_SENHA_HASH e SESSAO_SEGREDO, e reinicie o app.
+developer: Barn Swallow
+website: https://barnswallow.com.br
+submitter: Barn Swallow
+submission: ""
+repo: https://github.com/BarnSwallowBR/BARN_SWALLOW
+support: https://barnswallow.com.br
+port: 3005
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: ""
+dependencies: []
