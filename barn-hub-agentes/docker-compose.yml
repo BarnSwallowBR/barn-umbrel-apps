@@ -10,7 +10,7 @@ services:
       PROXY_AUTH_ADD: "false"
 
   app:
-    image: ghcr.io/barnswallowbr/barn-hub-agentes:0.1.2
+    image: ghcr.io/barnswallowbr/barn-hub-agentes:0.1.3
     restart: on-failure
     stop_grace_period: 10s
     # PAINEL_SENHA_HASH e SESSAO_SEGREDO ficam só no Umbrel, fora do Git.

@@ -2,7 +2,7 @@ manifestVersion: 1
 id: barn-hub-agentes
 category: developer
 name: Hub de Agentes
-version: "1.0.2"
+version: "1.1.0"
 tagline: Agentes, skills e documentos da Barn Swallow para qualquer IA
 icon: https://raw.githubusercontent.com/BarnSwallowBR/barn-umbrel-apps/main/barn-hub-agentes/icon.svg
 description: >-
@@ -24,6 +24,6 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  O botão do Umbrel agora abre o hub por https://agentes.barnswallow.com.br,
-  onde o login funciona. Corrige o loop de redirecionamento da 1.0.1.
+  A IA agora cria e ajusta skills pelo MCP (criar_skill, editar_skill e
+  gravar_arquivo_skill), como já fazia com agentes.
 dependencies: []
